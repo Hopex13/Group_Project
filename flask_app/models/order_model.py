@@ -36,7 +36,7 @@ class Order:
 
     @classmethod
     def get_orders_by_id(cls, data):
-        query = "SELECT * FROM orders WHERE id = %s"
+        query = "SELECT * FROM orders WHERE id = %(id)s"
         result = connectToMySQL(DB).query_db(query,data)
         if len(result) <1:
             return False
@@ -64,7 +64,7 @@ class Order:
 
     @classmethod
     def delete_order(cls, data):
-        query = "DELETE FROM orders WHERE id = %s"
+        query = "DELETE FROM orders WHERE id = %(id)s"
         results = connectToMySQL(DB).query_db(query, data)
         return results
     
@@ -84,8 +84,8 @@ class Order:
             errors['wallet'] = "Wallet is required"
         if not data['payment_method']:
             errors['payment_method'] = "Payment method is required"
-        if not data['user_id']:
-            errors['user_id'] = "User ID is required"
+        # if not data['user_id']:
+            # errors['user_id'] = "User ID is required"
         return errors
     
 

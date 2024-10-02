@@ -14,8 +14,8 @@ def new_trip():
 
 @app.route('/orders/add' , methods=['POST'])
 def create_order():
-    if not Order.validate_order(request.form):
-        return redirect('/orders/add')
+    # if not Order.validate_order(request.form):
+        # return redirect('/orders/new')
     order_data = {
         **request.form,
         'user_id': session['user_id']
@@ -29,20 +29,20 @@ def create_order():
 @app.route('/orders/edit/<int:order_id>')
 def edit_order(order_id):
     if 'user_id' not in session:
-        return redirect('/dashboard.html')
+        return redirect('/orders')
     order = Order.get_orders_by_id({'id': order_id})
     session['order_id'] = order_id
-    return render_template('edit_order.html', order=order[0])
+    return render_template('edit_order.html', order=order)
 
 
 
 #==================== Actions Route ==============================
-@app.route('/orders/update/<int:order_id>', methods=['POST'])
+@app.route('/orders/update/<int:order_id>', methods=['GET','POST'])
 def update_order(order_id):
     if 'user_id' not in session:
         return redirect('/')
-    if not Order.validate_order(request.form):
-        return redirect(f'/order/edit/{order_id}')
+    # if not Order.validate_order(request.form):
+        # return redirect(f'/order/edit/{order_id}')
     order_data = {
         **request.form,
         'id': order_id

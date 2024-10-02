@@ -241,8 +241,8 @@
                 </div>
             </div>
             <nav class="top-right-buttons">
-                <a href="/order/new">
-                    <span class="material-symbols-outlined"></span> Create New Order
+                <a href="/orders/new">
+                    <span class="material-symbols-outlined">new_window</span> Create New Order
                 </a>
                 <a href="/logout">
                     <span class="material-symbols-outlined">logout</span> Logout
@@ -268,7 +268,7 @@
                     <th><span class="material-symbols-outlined">person</span> Full Name</th>
                     <th><span class="material-symbols-outlined">mail</span> Email</th>
                     <th><span class="material-symbols-outlined">receipt_long</span> Order</th>
-                    <th><span class="material-symbols-outlined">pin</span> Quantity</th>
+                    <th><span class="material-symbols-outlined">pin</span> Wallet</th>
                     <th><span class="material-symbols-outlined">payments</span> Payment Method</th>
                     <th><span class="material-symbols-outlined">settings</span> Action</th>
                 </tr>
@@ -278,12 +278,13 @@
                 <tr>
                     <td><a href="/cards/{{ order.id }}">{{ order.full_name }}</a></td>
                     <td>{{ order.email }}</td>
-                    <td>{{ order.order }}</td>
+                    <td>{{ order.order_type }}</td>
                     <td>{{ order.wallet }}</td>
                     <td>{{ order.payment_method }}</td>
                     <td>
-                        {% if order.user_id != order.id %}
-                        <a href="/order/delete/{{ order.id }}" class="btn btn-danger" style="border-radius: 15px;">Delete</a>
+                        {% if order.user_id == user.id %}
+                            <a href="/orders/edit/{{ order.id }}">Edit</a> |
+                            <a href="/orders/delete/{{ order.id }}">Cancel</a>
                         {% endif %}
                     </td>
                 </tr>
