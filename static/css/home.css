@@ -1,0 +1,210 @@
+ /* Body and Font Styling */
+ body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    padding-bottom: 60px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    padding: 15px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: #2575fc;
+}
+
+/* Button Styling */
+.top-right-buttons a {
+    background: linear-gradient(45deg, #6711f3, #cc00ff);
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.top-right-buttons a:hover {
+    background: linear-gradient(45deg, #5208ff, #9b00cc);
+    transform: scale(1.05);
+}
+
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Button */
+.dropdown-button {
+    cursor: pointer;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Welcome Section Styling */
+.welcome-section {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+/* Table Styling */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+table th, table td {
+    padding: 12px; 
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+table th {
+    background: linear-gradient(45deg, #6711f3, #cc00ff);
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #f0f8ff;
+    transform: scale(1.01);
+}
+
+/* Footer Styling */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+    z-index: 1000;
+    font-size: 0.9em;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00aaff;
+    transform: scale(1.2);
+}
+
+/* Dark Mode Icon Styling */
+#darkModeToggle {
+    color: #333333;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+}
+
+#darkModeToggle:hover {
+    transform: rotate(180deg);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .top-right-buttons a {
+        padding: 8px 12px;
+    }
+
+    table {
+        width: 100%;
+    }
+}

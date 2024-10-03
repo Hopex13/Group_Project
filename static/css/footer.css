@@ -1,0 +1,40 @@
+/* Footer Styling */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Fond dégradé */
+    color: white;
+    text-align: center;
+    z-index: 1000;
+    font-size: 0.9em;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00aaff;
+    transform: scale(1.2);
+}
+
+/* Footer Dark Mode */
+body.dark-mode footer {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+}
