@@ -22,7 +22,7 @@
         /* Dark Mode Styles */
         body.dark-mode {
             background-color: #1e1e1e;
-            color: #f4f4f4;
+            color: #f4f4f4; /* Light text color for dark background */
         }
 
         /* Navbar Styling */
@@ -219,6 +219,34 @@
                 width: 100%;
             }
         }
+        /* Welcome Section Dark Mode */
+            body.dark-mode .welcome-section {
+                background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for contrast */
+                color: #f4f4f4; /* Ensure text remains light */
+            }
+            /* Table Dark Mode */
+body.dark-mode table {
+    background-color: #333; /* Dark background for table */
+    color: #f4f4f4; /* Light text for table rows */
+}
+
+body.dark-mode table th {
+    background: linear-gradient(45deg, #6711f3, #cc00ff);
+}
+
+body.dark-mode table tr:nth-child(even) {
+    background-color: #444; /* Darker even row background */
+}
+
+body.dark-mode table tr:hover {
+    background-color: #555; /* Darker hover background */
+}
+
+/* Footer Dark Mode */
+body.dark-mode footer {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+}
     </style>
 </head>
 <body>
@@ -276,7 +304,7 @@
             <tbody>
                 {% for order in all_orders %}
                 <tr>
-                    <td><a href="/cards/{{ order.id }}">{{ order.full_name }}</a></td>
+                    <td><a href="/orders/{{ order.id }}">{{ order.full_name }}</a></td>
                     <td>{{ order.email }}</td>
                     <td>{{ order.order_type }}</td>
                     <td>{{ order.wallet }}</td>
