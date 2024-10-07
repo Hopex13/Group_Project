@@ -6,10 +6,11 @@ app.secret_key = "hpx"
 
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
+app.config['MAIL_PORT'] = 465  
 app.config['MAIL_USERNAME'] = 'Nassymhopex3@gmail.com'
 app.config['MAIL_PASSWORD'] = 'pdcr jozd uglo zelu'
 app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USE_TLS'] = False  # Set to False if using SSL
 app.config['MAIL_DEFAULT_SENDER'] = 'Nassymhopex3@gmail.com'  
 mail = Mail(app)
 
@@ -29,7 +30,7 @@ def send_order():
 
     if not code or not email:
         flash("All fields are required!", "error")
-        return redirect('/orders/{{ order.id }}')  
+        return redirect(f'/orders/{{ order.id }}')  # Correcting the redirect syntax
 
     # Create a message
     msg = Message('GiftCard Order Received', recipients=[email])
@@ -45,15 +46,18 @@ def send_order():
     Best regards,
     GiftCard Shop
     """
-    
+
     # Send the email
     try:
         mail.send(msg)
+        print(f"Email sent successfully to {email}")  # Print success message
         flash("Email sent successfully!", "success")
     except Exception as e:
+        print(f"Failed to send email. Error: {str(e)}")  # Print error message
         flash(f"Failed to send email. Error: {str(e)}", "error")
 
-    return redirect('/orders')  
+    return redirect('/orders')
+
 
 
     

@@ -64,9 +64,6 @@ def logout():
     return redirect('/register')
 
 
-@app.route('/history')
-def history():
-    return render_template("history.html")
 
 
 @app.route('/login')
