@@ -6,7 +6,7 @@ from flask_app.models.order_model import Order
 
 #==================== Display Route ==============================
 @app.route('/orders/new')
-def new_trip():
+def new_order():
     return render_template('order_create.html')
 
 
@@ -56,5 +56,18 @@ def update_order(order_id):
 def delete_order(order_id):
     Order.delete_order({'id': order_id})
     return redirect('/orders')
+
+
+
+
+#==================== Actions Route ==============================
+
+@app.route('/orders/<int:order_id>')
+def show_one_order(order_id):
+    if 'user_id' not in session:
+        return redirect('/orders')
+    order = Order.get_orders_by_id({'id': order_id})
+    user = User.get_by_id({'id': session['user_id']})
+    return render_template('proceed.html', order=order, user=user)
 
 

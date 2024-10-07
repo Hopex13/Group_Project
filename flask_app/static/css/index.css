@@ -1,0 +1,119 @@
+    /* Body and Font Styling */
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f4f7fc;
+        color: #333;
+        padding-bottom: 60px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+   
+   
+
+    /* Welcome Section Styling */
+    .welcome-section {
+        margin: 20px auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+    }
+
+    /* Table Styling */
+    table {
+        width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s;
+    }
+
+    table th, table td {
+        padding: 12px; 
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.3s;
+    }
+
+    table th {
+        background: linear-gradient(45deg, #6711f3, #cc00ff);
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    table tr:hover {
+        background-color: #f0f8ff;
+        transform: scale(1.01);
+    }
+
+    
+
+    /* Dark Mode Icon Styling */
+    #darkModeToggle {
+        color: #333333;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.1em;
+        transition: transform 0.3s ease;
+    }
+
+    #darkModeToggle:hover {
+        transform: rotate(180deg);
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+        }
+
+        .top-right-buttons a {
+            padding: 8px 12px;
+        }
+
+        table {
+            width: 100%;
+        }
+    }
+/* Welcome Section Dark Mode */
+body.dark-mode .welcome-section {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for contrast */
+    color: #f4f4f4; /* Ensure text remains light */
+}
+/* Table Dark Mode */
+body.dark-mode table {
+background-color: #333; /* Dark background for table */
+color: #f4f4f4; /* Light text for table rows */
+}
+
+body.dark-mode table th {
+background: linear-gradient(45deg, #6711f3, #cc00ff);
+}
+
+body.dark-mode table tr:nth-child(even) {
+background-color: #444; /* Darker even row background */
+}
+
+body.dark-mode table tr:hover {
+background-color: #555; /* Darker hover background */
+}
+
+/* Footer Dark Mode */
+body.dark-mode footer {
+background: linear-gradient(to right, #6a11cb, #2575fc);
+color: white;
+}

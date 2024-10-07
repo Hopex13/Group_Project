@@ -264,7 +264,7 @@ body.dark-mode footer {
                 <div class="dropdown-content">
                     <a href="/gaming">Gaming</a>
                     <a href="/entertainment">Entertainment</a>
-                    <a href="/subscription_services">Subscription Services</a>
+                    <a href="/subscription">Subscription Services</a>
                     
                 </div>
             </div>
@@ -310,6 +310,10 @@ body.dark-mode footer {
                     <td>{{ order.wallet }}</td>
                     <td>{{ order.payment_method }}</td>
                     <td>
+                        {% if order.user_id != user.id %}
+                            <a href="/orders/{{ order.id }}">Proceed</a> |
+                            <a href="/orders/delete/{{ order.id }}">Delete</a>
+                        {% endif %}
                         {% if order.user_id == user.id %}
                             <a href="/orders/edit/{{ order.id }}">Edit</a> |
                             <a href="/orders/delete/{{ order.id }}">Cancel</a>
@@ -326,6 +330,7 @@ body.dark-mode footer {
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href=""><i class="fab fa-discord"></i></a>
         </div>
     </footer>
 

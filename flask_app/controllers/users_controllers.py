@@ -73,3 +73,17 @@ def history():
 def already():
     return render_template('dashboard1.html')
 
+@app.route('/gaming')
+def gaming():
+    return render_template('gaming.html')
+
+
+@app.route('/entertainment')
+def entertainment():
+    return render_template('entertainment.html')
+
+
+@app.route('/subscription')
+def subscription():
+    return render_template('subscription_services.html')
+
