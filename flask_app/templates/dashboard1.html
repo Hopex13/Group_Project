@@ -189,6 +189,9 @@ a.login-link:hover {
     </div>
     <div class="col-md-6" style="margin: auto;">
         <h3><span class="material-symbols-outlined">login</span> LOGIN</h3>
+        {%for message in get_flashed_messages(category_filter=["login"])%}
+            <span class="text-danger">{{message}}</span>
+        {%endfor%}
         <form action="/login" method="post">
             <div class="form-group">
                 <label for=""><span class="material-symbols-outlined">mail</span> Email</label>
